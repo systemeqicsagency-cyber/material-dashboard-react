@@ -30,7 +30,18 @@ function DataTableHeadCell({ width, children, sorted, align, ...rest }) {
   const { darkMode } = controller;
 
   return (
-    <MDBox component="th" width={width} py={1.5} px={3}>
+    <MDBox
+      component="th"
+      width={width}
+      py={1.5}
+      px={3}
+      sx={({ palette: { grey }, borders: { borderWidth } }) => ({
+        borderRight: `${borderWidth[1]} solid ${grey[700]}`,
+        "&:last-child": {
+          borderRight: "none",
+        },
+      })}
+    >
       <MDBox
         {...rest}
         position="relative"
