@@ -27,7 +27,6 @@ const tableHead = {
       display: "block",
       padding: `${pxToRem(16)} ${pxToRem(16)} 0  ${pxToRem(16)}`,
       borderRadius: `${borderRadius.xl} ${borderRadius.xl} 0 0`,
-      backgroundColor: "transparent",
     },
   },
 };
