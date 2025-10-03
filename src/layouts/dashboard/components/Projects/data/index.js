@@ -60,9 +60,16 @@ export default function data() {
       </Tooltip>
     ));
 
-  const Company = ({ image, name }) => (
+  const Company = ({ image, name, bgColor }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
-      <MDAvatar src={image} name={name} size="sm" />
+      <MDAvatar
+        src={image}
+        name={name}
+        size="sm"
+        sx={{
+          backgroundColor: bgColor || "transparent",
+        }}
+      />
       <MDTypography variant="button" fontWeight="medium" ml={1} lineHeight={1}>
         {name}
       </MDTypography>
@@ -79,7 +86,7 @@ export default function data() {
 
     rows: [
       {
-        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        companies: <Company image={logoXD} name="Material UI XD Version" bgColor="#8B5CF6" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -102,7 +109,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoAtlassian} name="Add Progress Track" />,
+        companies: <Company image={logoAtlassian} name="Add Progress Track" bgColor="#2E86DE" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -123,7 +130,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoSlack} name="Fix Platform Errors" />,
+        companies: <Company image={logoSlack} name="Fix Platform Errors" bgColor="#FF6B35" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -144,7 +151,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoSpotify} name="Launch our Mobile App" />,
+        companies: <Company image={logoSpotify} name="Launch our Mobile App" bgColor="#10B981" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -167,7 +174,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoJira} name="Add the New Pricing Page" />,
+        companies: <Company image={logoJira} name="Add the New Pricing Page" bgColor="#00D9FF" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([[team4, "Jessica Doe"]])}
@@ -185,7 +192,9 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoInvesion} name="Redesign New Online Shop" />,
+        companies: (
+          <Company image={logoInvesion} name="Redesign New Online Shop" bgColor="#FF1493" />
+        ),
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
