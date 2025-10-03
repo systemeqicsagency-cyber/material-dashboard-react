@@ -60,7 +60,13 @@ function Projects() {
   );
 
   return (
-    <Card>
+    <Card
+      sx={{
+        backgroundColor: "rgba(255, 255, 255, 0.05)",
+        backdropFilter: "blur(10px)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+      }}
+    >
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <MDBox>
           <MDTypography variant="h6" gutterBottom>
