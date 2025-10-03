@@ -161,6 +161,7 @@ function DataTable({
                 size="small"
                 sx={{ width: "5rem" }}
                 renderInput={(params) => <MDInput {...params} />}
+                }
               />
               <MDTypography variant="caption" color="secondary">
                 &nbsp;&nbsp;entries per page
@@ -186,7 +187,11 @@ function DataTable({
       <Table {...getTableProps()}>
         <MDBox component="thead">
           {headerGroups.map((headerGroup, key) => (
-            <TableRow key={key} {...headerGroup.getHeaderGroupProps()}>
+            <TableRow
+              key={key}
+              {...headerGroup.getHeaderGroupProps()}
+              sx={{ backgroundColor: "transparent" }}
+            >
               {headerGroup.headers.map((column, idx) => (
                 <DataTableHeadCell
                   key={idx}
