@@ -22,6 +22,10 @@ const globals = {
   html: {
     scrollBehavior: "smooth",
   },
+  body: {
+    background: "linear-gradient(135deg, #000000 0%, #001a33 50%, #1a0033 100%)",
+    backgroundAttachment: "fixed",
+  },
   "*, *::before, *::after": {
     margin: 0,
     padding: 0,
