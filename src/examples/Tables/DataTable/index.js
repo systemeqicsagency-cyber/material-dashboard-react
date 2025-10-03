@@ -187,11 +187,7 @@ function DataTable({
       <Table {...getTableProps()}>
         <MDBox component="thead">
           {headerGroups.map((headerGroup, key) => (
-            <TableRow
-              key={key}
-              {...headerGroup.getHeaderGroupProps()}
-              sx={{ backgroundColor: "transparent" }}
-            >
+            <TableRow key={key} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, idx) => (
                 <DataTableHeadCell
                   key={idx}
