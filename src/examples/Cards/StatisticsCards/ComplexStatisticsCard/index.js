@@ -26,14 +26,16 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
+  const isHexColor = color && color.startsWith("#");
+
   return (
     <Card>
       <MDBox display="flex" justifyContent="space-between" pt={1} px={2}>
         <MDBox
-          variant="gradient"
-          bgColor={color}
+          variant={isHexColor ? "contained" : "gradient"}
+          bgColor={isHexColor ? color : color}
           color={color === "light" ? "dark" : "white"}
-          coloredShadow={color}
+          coloredShadow={isHexColor ? "none" : color}
           borderRadius="xl"
           display="flex"
           justifyContent="center"
@@ -41,6 +43,14 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
           width="4rem"
           height="4rem"
           mt={-3}
+          sx={
+            isHexColor
+              ? {
+                  background: `linear-gradient(195deg, ${color} 0%, ${color}dd 100%)`,
+                  boxShadow: `0rem 0.25rem 1.25rem 0rem ${color}40, 0rem 0.4375rem 0.625rem -0.3125rem ${color}60`,
+                }
+              : {}
+          }
         >
           <Icon fontSize="medium" color="inherit">
             {icon}
@@ -83,16 +93,7 @@ ComplexStatisticsCard.defaultProps = {
 
 // Typechecking props for the ComplexStatisticsCard
 ComplexStatisticsCard.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "info",
-    "success",
-    "warning",
-    "error",
-    "light",
-    "dark",
-  ]),
+  color: PropTypes.string,
   title: PropTypes.string.isRequired,
   count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   percentage: PropTypes.shape({

@@ -46,7 +46,7 @@ function Dashboard() {
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
-                color="dark"
+                color="#8B5CF6"
                 icon="weekend"
                 title="Bookings"
                 count={281}
@@ -61,6 +61,7 @@ function Dashboard() {
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
+                color="#FF6B35"
                 icon="leaderboard"
                 title="Today's Users"
                 count="2,300"
@@ -75,7 +76,7 @@ function Dashboard() {
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
-                color="success"
+                color="#FF1493"
                 icon="store"
                 title="Revenue"
                 count="34k"
@@ -90,7 +91,7 @@ function Dashboard() {
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
-                color="primary"
+                color="#00D9FF"
                 icon="person_add"
                 title="Followers"
                 count="+91"
@@ -124,6 +125,7 @@ function Dashboard() {
                   description={
                     <>
                       (<strong>+15%</strong>) increase in today sales.
+                      )
                     </>
                   }
                   date="updated 4 min ago"
