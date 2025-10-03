@@ -48,7 +48,7 @@ function ReportsBarChart({ color, title, description, date, chart }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});
 
   return (
-    <Card sx={{ height: "100%", boxShadow: "0 8px 24px rgba(0, 0, 0, 0.4)" }}>
+    <Card sx={{ height: "100%" }}>
       <MDBox padding="1rem">
         {useMemo(
           () => (
